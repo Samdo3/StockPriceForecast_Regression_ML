@@ -26,7 +26,7 @@ def set_korean_font():
     elif platform.system() == 'Darwin':
         # macOS의 경우
         rc('font', family='AppleGothic')
-    else:
+    else:  
         # 기타 OS의 경우
         rc('font', family='NanumGothic')
 
