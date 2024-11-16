@@ -275,7 +275,7 @@ with gr.Blocks(gr.themes.Monochrome(), css=css_code) as demo:
 
     agree_btn.click(close_modal, None, modal)
 
-    exchange_rate = exchangerate()
+    exchange_rate = get_usd_to_krw_exchange_rate()
 
     with gr.Row():
         trigger_info = gr.Button(value="분석 관련 정보")

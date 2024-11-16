@@ -21,7 +21,6 @@ app = Flask(__name__)
 sns.set(style="whitegrid")
 
 
-
 def stock_predict(ticker):
     
     # start_date부터 당일까지 출력가능
