@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run stock_backend",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/stock_backend.py"
+    },
+    {
+      "name": "Run index",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/frontend/index.py"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Both",
+      "configurations": ["Run stock_backend", "Run index"]
+    }
+  ]
+}

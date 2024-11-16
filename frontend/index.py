@@ -1,6 +1,14 @@
 import sys
 import os
-import yfinance as yf
+
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(project_root)
+os.chdir(project_root)
+
+print(f"Current working directory: {os.getcwd()}")
+
+
+from project_common.my_yfinance import *
 import pandas as pd
 import matplotlib.pyplot as plt
 import gradio as gr
@@ -10,18 +18,14 @@ import random
 import base64
 import platform
 from matplotlib import font_manager, rc
-
-# Add common module to path
-sys.path.append(os.path.abspath(os.path.join('..')))
-from common.yfinance import *
-
 import random
 import base64
+
 
 def set_korean_font():
     if platform.system() == 'Windows':
         # Windows의 경우
-        font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/malgun.ttf").get_name()
+        font_name = font_manager.FontProperties(fname="c:/Windows/Fonts/Arial.ttf").get_name()
         rc('font', family=font_name)
     elif platform.system() == 'Darwin':
         # macOS의 경우
@@ -43,18 +47,20 @@ daily = dailyChart()
 daily[0].head(10)
 daily[1].head(10)
 
+
+
 # 사용 가능한 티커 목록 가져오기
-available_tickers = pd.read_csv('../data/available_tickers.csv')['tickers'].str.upper().tolist()
+available_tickers = pd.read_csv(project_root+"/data/available_tickers.csv")['tickers'].str.upper().tolist()
 random.shuffle(available_tickers)
 
 # 이미지 파일을 base64로 인코딩
-with open("images/bg_04.png", "rb") as image_file:
+with open("frontend/images/bg_04.png", "rb") as image_file:
     encoded_string = base64.b64encode(image_file.read()).decode()
 
-with open("images/up.png", "rb") as image_file:
+with open("frontend/images/up.png", "rb") as image_file:
     encoded_up_image = base64.b64encode(image_file.read()).decode()
 
-with open("images/down.png", "rb") as image_file:
+with open("frontend/images/down.png", "rb") as image_file:
     encoded_down_image = base64.b64encode(image_file.read()).decode()
     
 # Gradio 인터페이스 설정
@@ -138,6 +144,7 @@ div.small-font span {{
 .predict_ticker, .predict_price, .start_price {{
     padding: 20px 10px 20px 10px;
     font-size: 20px;
+    color:black;
 }}
 
 span.price_down {{
@@ -174,8 +181,7 @@ span.price_up {{
 import requests
 
 # 요청 URL
-# url = "http://121.162.37.155:5000/predict"
-url = "http://127.0.0.1:5001/predict"
+url = "http://127.0.0.1:5000/predict"
 
 # 요청 헤더 설정
 # headers = {
@@ -264,7 +270,7 @@ def close_modal():
 with gr.Blocks(gr.themes.Monochrome(), css=css_code) as demo:
 
     with Modal(visible=True,allow_user_close=False) as modal:
-            gr.Image("images/start_mobile.png", show_label=False, show_download_button=False, show_fullscreen_button=False)
+            gr.Image("frontend/images/start_mobile.png", show_label=False, show_download_button=False, show_fullscreen_button=False)
             agree_btn = gr.Button("START")
 
     agree_btn.click(close_modal, None, modal)
