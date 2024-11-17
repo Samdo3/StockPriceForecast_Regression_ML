@@ -132,3 +132,8 @@ curl -X POST -H "Content-Type: application/json" -d '{"ticker": "AAPL"}' http://
   "Min_diff": -1.3
 }
 ```
+---
+
+## 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다.
