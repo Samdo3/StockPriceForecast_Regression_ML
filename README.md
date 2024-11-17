@@ -1,5 +1,7 @@
 # Stock Price Forecasting with Regression Models
 
+![시연1](https://github.com/user-attachments/assets/7d358b5d-552e-48ca-a7a3-2cc3525ea147)![시연2](https://github.com/user-attachments/assets/bc439948-34c7-4bcd-bb89-f60af2c8876f)
+
 이 프로젝트는 머신러닝과 다양한 데이터 소스를 활용하여 주식 시장 데이터를 분석하고 예측하는 시스템을 제공합니다. `Flask`를 사용한 RESTful API, `Gradio` 기반의 사용자 인터페이스, 그리고 `LightGBM` 모델을 활용하여 종가 예측 및 데이터 시각화를 수행합니다.   
 ( 이 프로젝트는 MS AI SCHOOL 5기 1차 프로젝트를 진행하며 개발되었습니다. )
 
