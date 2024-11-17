@@ -261,4 +261,4 @@ def predict():
 
 #아래는 host를 저리 설정하면 외부에서 제한없이 사용가능
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=False)
