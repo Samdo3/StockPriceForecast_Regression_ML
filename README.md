@@ -1,7 +1,7 @@
 # Stock Price Forecasting with Regression Models
 
 <div style="display: flex; justify-content: center; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/7d358b5d-552e-48ca-a7a3-2cc3525ea147" alt="Image 1" width="49%"/>
+  <img src="" alt="Image 1" width="49%"/>
   <img src="https://github.com/user-attachments/assets/bc439948-34c7-4bcd-bb89-f60af2c8876f" alt="Image 2" width="49%"/>
 </div>
 
